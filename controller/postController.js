@@ -11,6 +11,7 @@ const index= (req, res) => {
         let markup = `
         <li> 
         ${title}
+        <p>${slug}</p>
         <p>${content}</p>
         </li>`
         res.send(markup)
