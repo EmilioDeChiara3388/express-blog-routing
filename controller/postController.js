@@ -2,14 +2,23 @@ const posts= require("../db.js")
 
 const index= (req, res) => {
     //res.send("Siamo all'Index")
-
-    res.status(200).json({
-        data: posts,
+    
+    //console.log(title);
+    
+    posts.forEach(post => {
+        let { title, slug, content, image, tags } = post
+        let markup = `
+        <li> 
+        ${title}
+        <p>${content}</p>
+        </li>`
+        res.send(markup)
     })
+    
+    
 }
 
 const show= (req, res) => {
-    //console.log(req.params.slug);
 
     const post = posts.find(post => post.slug === (req.params.slug))
     console.log(post);

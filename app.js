@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-//const postController = require("./controller/postController.js")
 const postRouter = require("./routers/posts.js")
 
 const HOST = process.env.HOST
@@ -11,8 +10,3 @@ app.listen(PORT, (req, res) => {
 })
 
 app.use("/post", postRouter)
-
-//const posts = require("./db.js")
-//app.get("/", postController.index)
-   
-//app.get("/:slug", postController.show)
